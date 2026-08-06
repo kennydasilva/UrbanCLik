@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "../styles/scrollbar.css";
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 40 20% 5%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 40 20% 5%;
+
+    --primary: 45 85% 58%;
+    --primary-foreground: 40 20% 5%;
+
+    --secondary: 40 15% 95%;
+    --secondary-foreground: 40 20% 5%;
+
+    --muted: 40 15% 95%;
+    --muted-foreground: 40 10% 40%;
+
+    --accent: 45 85% 58%;
+    --accent-foreground: 40 20% 5%;
+
+    --border: 40 15% 90%;
+    --input: 40 15% 90%;
+    --ring: 45 85% 58%;
+
+    --radius: 1rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-ink-500 font-sans text-paper antialiased;
+  }
+
+  ::selection {
+    @apply bg-gold-400/30 text-paper;
+  }
+
+  /* Visible focus states for keyboard navigation (accessibility) */
+  :focus-visible {
+    @apply outline-none ring-2 ring-gold-400 ring-offset-2 ring-offset-ink-500;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

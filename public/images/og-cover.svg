@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="glow" cx="70%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#F1CE3D" stop-opacity="0.55"/>
+      <stop offset="55%" stop-color="#F1CE3D" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#0B0A06" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cursor" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FBEDA0"/>
+      <stop offset="55%" stop-color="#F1CE3D"/>
+      <stop offset="100%" stop-color="#C6931A"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#0B0A06"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <text x="80" y="260" font-family="Arial, sans-serif" font-size="88" font-weight="700" fill="#FBF9F4">WE CREATE</text>
+  <text x="80" y="360" font-family="Arial, sans-serif" font-size="88" font-weight="700" fill="#FBF9F4">YOU GROW</text>
+  <text x="80" y="420" font-family="Arial, sans-serif" font-size="28" fill="#FBF9F4" opacity="0.7">UrbanClick — Agência de Marketing e Comunicação</text>
+  <path d="M780 180 L1020 340 L900 365 L860 470 Z" fill="url(#cursor)"/>
+</svg>

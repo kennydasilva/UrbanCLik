@@ -1,0 +1,23 @@
+/* Custom scrollbar — kept subtle and on-brand with the gold accent. */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b0a06;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3a362b;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e7b824;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #3a362b #0b0a06;
+}
