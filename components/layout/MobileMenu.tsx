@@ -28,20 +28,22 @@ export function MobileMenu({ open, onClose, onOpenContact }: MobileMenuProps) {
           aria-modal="true"
           aria-label="Menu de navegação"
         >
-          <div className="flex items-center justify-between px-5 py-6">
+          {/* Header do menu - responsivo */}
+          <div className="flex items-center justify-between px-4 sm:px-5 py-4 sm:py-6">
             <Logo />
             <button
               type="button"
               onClick={onClose}
               aria-label="Fechar menu"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-paper/15 text-paper transition-colors hover:border-gold-400 hover:text-gold-300"
+              className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-paper/15 text-paper transition-colors hover:border-gold-400 hover:text-gold-300"
             >
-              <X className="h-5 w-5" />
+              <X className="h-4 w-4 sm:h-5 sm:w-5" />
             </button>
           </div>
 
+          {/* Links do menu - responsivo */}
           <motion.nav
-            className="flex flex-1 flex-col justify-center gap-2 px-8"
+            className="flex flex-1 flex-col justify-center gap-1.5 sm:gap-2 px-5 sm:px-8"
             initial="closed"
             animate="open"
             variants={{
@@ -64,7 +66,7 @@ export function MobileMenu({ open, onClose, onOpenContact }: MobileMenuProps) {
                     key={link.href}
                     type="button"
                     onClick={handleClick}
-                    className="border-b border-paper/10 py-4 text-left font-display text-3xl text-paper transition-colors hover:text-gold-300"
+                    className="border-b border-paper/10 py-3.5 sm:py-4 text-left font-display text-2xl sm:text-3xl text-paper transition-colors hover:text-gold-300"
                     variants={{
                       open: { opacity: 1, y: 0 },
                       closed: { opacity: 0, y: 16 },
@@ -79,7 +81,7 @@ export function MobileMenu({ open, onClose, onOpenContact }: MobileMenuProps) {
                   key={link.href}
                   href={link.href}
                   onClick={handleClick}
-                  className="border-b border-paper/10 py-4 font-display text-3xl text-paper transition-colors hover:text-gold-300"
+                  className="border-b border-paper/10 py-3.5 sm:py-4 font-display text-2xl sm:text-3xl text-paper transition-colors hover:text-gold-300"
                   variants={{
                     open: { opacity: 1, y: 0 },
                     closed: { opacity: 0, y: 16 },

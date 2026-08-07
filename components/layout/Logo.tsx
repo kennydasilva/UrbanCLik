@@ -19,7 +19,7 @@ export function Logo({ tone = "light", className }: LogoProps) {
       width={1080}
       height={1080}
       priority
-      className={cn("h-44 w-auto select-none sm:h-56", className)}
+      className={cn("h-28 w-auto select-none sm:h-36 md:h-44 lg:h-56", className)}
     />
   );
 }

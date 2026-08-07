@@ -15,14 +15,15 @@ export function FAQ() {
   const rightColumn = FAQS.slice(Math.ceil(FAQS.length / 2));
 
   return (
-    <section className="relative bg-ink-500 py-20 sm:py-28">
-      <Container className="flex flex-col gap-12">
+    <section className="relative bg-ink-500 py-16 sm:py-20 lg:py-28">
+      <Container className="flex flex-col gap-8 sm:gap-10 lg:gap-12">
+        {/* Título - responsivo */}
         <motion.h2
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="font-display text-4xl leading-[1.05] tracking-tight sm:text-5xl"
+          className="font-display text-3xl sm:text-4xl md:text-5xl leading-[1.05] tracking-tight"
         >
           <span className="text-gold-400">Você</span>{" "}
           <span className="text-paper">pergunta</span>
@@ -32,13 +33,14 @@ export function FAQ() {
           <span className="text-paper">respondemos</span>
         </motion.h2>
 
-        <div className="grid gap-4 lg:grid-cols-2 lg:gap-6">
+        {/* Grid FAQ - responsivo */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4 lg:gap-6">
           {[leftColumn, rightColumn].map((column, columnIndex) => (
             <Accordion
               key={columnIndex}
               type="single"
               collapsible
-              className="flex flex-col gap-3"
+              className="flex flex-col gap-2 sm:gap-3"
             >
               {column.map((faq) => (
                 <AccordionItem key={faq.id} value={faq.id}>

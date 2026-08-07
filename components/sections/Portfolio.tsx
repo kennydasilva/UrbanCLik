@@ -35,19 +35,21 @@ const PROJECTS = [
 
 export function Portfolio() {
   return (
-    <section className="relative bg-ink-500 py-20 sm:py-28">
-      <Container className="flex flex-col gap-12">
+    <section className="relative bg-ink-500 py-16 sm:py-20 lg:py-28">
+      <Container className="flex flex-col gap-8 sm:gap-10 lg:gap-12">
+        {/* Título - responsivo */}
         <motion.h2
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="max-w-xl font-display text-4xl leading-[1.05] tracking-tight text-paper sm:text-5xl"
+          className="max-w-xl font-display text-3xl sm:text-4xl md:text-5xl leading-[1.05] tracking-tight text-paper"
         >
           <span className="text-gold-400">Projetos</span> que falam por si só
         </motion.h2>
 
-        <div className="grid gap-4 sm:grid-cols-2">
+        {/* Grid de projetos - responsivo */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
           {PROJECTS.map((project, index) => (
             <motion.div
               key={project.id}
@@ -62,19 +64,19 @@ export function Portfolio() {
                 alt={project.alt}
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
-                sizes="(max-width: 640px) 100vw, 50vw"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 50vw"
               />
               {project.showButton && (
-                <div className="absolute inset-x-0 bottom-6 flex justify-center sm:bottom-8">
+                <div className="absolute inset-x-0 bottom-4 flex justify-center sm:bottom-6 lg:bottom-8">
                   <Button asChild variant="gold" size="sm">
                     <a
                       href="/PORTIFOLIO-ATUALIZADO.pdf"
                       download
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2"
+                      className="inline-flex items-center gap-2 text-xs sm:text-sm"
                     >
-                      <Download className="h-4 w-4" strokeWidth={2} />
+                      <Download className="h-3 w-3 sm:h-4 sm:w-4" strokeWidth={2} />
                       Baixar portfólio
                     </a>
                   </Button>

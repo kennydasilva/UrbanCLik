@@ -19,7 +19,7 @@ export function Navbar({ className, onOpenContact }: NavbarProps) {
   return (
     <nav
       className={cn(
-        "hidden items-center gap-1 rounded-full border border-gold-400/60 bg-ink-500/50 px-3 py-2.5 backdrop-blur-md lg:flex",
+        "hidden items-center gap-0.5 sm:gap-1 rounded-full border border-gold-400/60 bg-ink-500/50 px-2 sm:px-3 py-2 sm:py-2.5 backdrop-blur-md lg:flex",
         className,
       )}
       aria-label="Navegação principal"
@@ -33,7 +33,7 @@ export function Navbar({ className, onOpenContact }: NavbarProps) {
               key={link.href}
               type="button"
               onClick={() => handleScrollToSection(sectionId)}
-              className="rounded-full px-5 py-2 text-base font-medium text-paper/90 transition-colors duration-200 hover:bg-gold-400/10 hover:text-gold-300"
+              className="rounded-full px-3 sm:px-5 py-1.5 sm:py-2 text-xs sm:text-sm lg:text-base font-medium text-paper/90 transition-colors duration-200 hover:bg-gold-400/10 hover:text-gold-300"
             >
               {link.label}
             </button>
@@ -48,7 +48,7 @@ export function Navbar({ className, onOpenContact }: NavbarProps) {
               key={link.href}
               type="button"
               onClick={onOpenContact}
-              className="rounded-full px-5 py-2 text-base font-medium text-paper/90 transition-colors duration-200 hover:bg-gold-400/10 hover:text-gold-300"
+              className="rounded-full px-3 sm:px-5 py-1.5 sm:py-2 text-xs sm:text-sm lg:text-base font-medium text-paper/90 transition-colors duration-200 hover:bg-gold-400/10 hover:text-gold-300"
             >
               {link.label}
             </button>
@@ -63,7 +63,7 @@ export function Navbar({ className, onOpenContact }: NavbarProps) {
               key={link.href}
               type="button"
               onClick={() => handleScrollToSection(sectionId)}
-              className="rounded-full px-5 py-2 text-base font-medium text-paper/90 transition-colors duration-200 hover:bg-gold-400/10 hover:text-gold-300"
+              className="rounded-full px-3 sm:px-5 py-1.5 sm:py-2 text-xs sm:text-sm lg:text-base font-medium text-paper/90 transition-colors duration-200 hover:bg-gold-400/10 hover:text-gold-300"
             >
               {link.label}
             </button>
@@ -75,7 +75,7 @@ export function Navbar({ className, onOpenContact }: NavbarProps) {
           <a
             key={link.href}
             href={link.href}
-            className="rounded-full px-5 py-2 text-base font-medium text-paper/90 transition-colors duration-200 hover:bg-gold-400/10 hover:text-gold-300"
+            className="rounded-full px-3 sm:px-5 py-1.5 sm:py-2 text-xs sm:text-sm lg:text-base font-medium text-paper/90 transition-colors duration-200 hover:bg-gold-400/10 hover:text-gold-300"
           >
             {link.label}
           </a>

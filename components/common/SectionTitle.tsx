@@ -21,7 +21,7 @@ export function SectionTitle({
   return (
     <div
       className={cn(
-        "flex flex-col gap-4",
+        "flex flex-col gap-2 sm:gap-4",
         align === "center" && "items-center text-center",
         className,
       )}
@@ -30,7 +30,7 @@ export function SectionTitle({
       {eyebrow ? (
         <span
           className={cn(
-            "text-xs font-semibold uppercase tracking-[0.2em]",
+            "text-[10px] sm:text-xs font-semibold uppercase tracking-[0.15em] sm:tracking-[0.2em]",
             tone === "light" ? "text-gold-400" : "text-gold-600",
           )}
         >
@@ -39,7 +39,7 @@ export function SectionTitle({
       ) : null}
       <h2
         className={cn(
-          "font-display text-4xl leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl",
+          "font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight",
           tone === "light" ? "text-paper" : "text-ink-500",
         )}
       >
@@ -48,7 +48,7 @@ export function SectionTitle({
       {description ? (
         <p
           className={cn(
-            "max-w-2xl text-base leading-relaxed sm:text-lg",
+            "max-w-2xl text-sm sm:text-base lg:text-lg leading-relaxed",
             tone === "light" ? "text-paper/70" : "text-ink-500/70",
             align === "center" && "mx-auto",
           )}

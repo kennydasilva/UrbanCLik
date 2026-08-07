@@ -39,10 +39,11 @@
 
   html {
     scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
   }
 
   body {
-    @apply bg-ink-500 font-sans text-paper antialiased;
+    @apply bg-ink-500 font-sans text-paper antialiased overflow-x-hidden;
   }
 
   ::selection {
@@ -53,14 +54,176 @@
   :focus-visible {
     @apply outline-none ring-2 ring-gold-400 ring-offset-2 ring-offset-ink-500;
   }
-}
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  /* Melhorias para dispositivos móveis */
+  button,
+  a {
+    @apply touch-manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Scrollbar personalizada para toda a página */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-ink-400;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gold-400 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gold-500;
   }
 }
 
+@layer components {
+  /* Container responsivo universal */
+  .container-responsive {
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Títulos responsivos (Mobile First) */
+  .heading-1 {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold;
+  }
+
+  .heading-2 {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold;
+  }
+
+  .heading-3 {
+    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold;
+  }
+
+  .heading-4 {
+    @apply text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold;
+  }
+
+  /* Textos responsivos */
+  .text-body {
+    @apply text-sm sm:text-base lg:text-lg;
+  }
+
+  .text-small {
+    @apply text-xs sm:text-sm lg:text-base;
+  }
+
+  .text-large {
+    @apply text-base sm:text-lg lg:text-xl;
+  }
+
+  /* Grids responsivos */
+  .grid-cards {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8;
+  }
+
+  .grid-cards-2 {
+    @apply grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8;
+  }
+
+  .grid-cards-3 {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8;
+  }
+
+  /* Espaçamentos responsivos */
+  .section-padding {
+    @apply py-12 sm:py-16 lg:py-20 xl:py-24;
+  }
+
+  .section-margin {
+    @apply my-8 sm:my-12 lg:my-16;
+  }
+
+  .gap-responsive {
+    @apply gap-4 sm:gap-6 lg:gap-8;
+  }
+
+  .space-responsive {
+    @apply space-y-4 sm:space-y-6 lg:space-y-8;
+  }
+
+  /* Botões responsivos */
+  .btn-primary {
+    @apply px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 bg-gold-400 text-ink-500 text-sm sm:text-base font-semibold rounded-full hover:bg-gold-500 transition flex items-center justify-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 border border-paper/20 text-sm sm:text-base rounded-full hover:bg-paper/10 transition flex items-center justify-center gap-2;
+  }
+
+  .btn-outline {
+    @apply px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 border border-gold-400 text-gold-400 text-sm sm:text-base rounded-full hover:bg-gold-400 hover:text-ink-500 transition flex items-center justify-center gap-2;
+  }
+
+  /* Cards responsivos */
+  .card {
+    @apply bg-ink-400/50 backdrop-blur-sm p-4 sm:p-6 lg:p-8 rounded-2xl border border-paper/5 hover:border-gold-400/30 transition;
+  }
+
+  .card-glow {
+    @apply bg-ink-400/50 backdrop-blur-sm p-4 sm:p-6 lg:p-8 rounded-2xl border border-gold-400/20 shadow-lg shadow-gold-400/5 hover:shadow-gold-400/10 transition;
+  }
+}
+
+@layer utilities {
+  /* Imagens responsivas */
+  .img-responsive {
+    @apply w-full h-auto object-cover;
+  }
+
+  .img-cover {
+    @apply w-full h-full object-cover;
+  }
+
+  /* Para evitar overflow */
+  .no-overflow {
+    @apply overflow-hidden max-w-full;
+  }
+
+  /* Text balance para títulos */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Efeitos de brilho */
+  .glow-gold {
+    @apply shadow-gold-400/20 shadow-lg;
+  }
+
+  /* Animações suaves para mobile */
+  .transition-mobile {
+    @apply transition duration-300 ease-in-out;
+  }
+}
+
+/* Ajustes específicos para telas muito pequenas */
+@media (max-width: 360px) {
+  .container-responsive {
+    @apply px-3;
+  }
+
+  .heading-1 {
+    @apply text-2xl;
+  }
+
+  .heading-2 {
+    @apply text-xl;
+  }
+}
+
+/* Ajustes para tablets em modo paisagem */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .section-padding {
+    @apply py-16;
+  }
+}
+
+/* Reduz animações para quem prefere */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

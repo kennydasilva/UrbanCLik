@@ -8,11 +8,11 @@ import { cn } from "@/lib/utils";
 
 export function Services() {
   return (
-    <section id="servicos" className="relative bg-ink-500 pt-2 pb-10 sm:pt-4 sm:pb-16">
-      <Container className="flex flex-col gap-4 sm:gap-6">
+    <section id="servicos" className="relative bg-ink-500 pt-2 pb-8 sm:pt-4 sm:pb-12 lg:pb-16">
+      <Container className="flex flex-col gap-4 sm:gap-5 lg:gap-6">
         <SectionTitle
           title={
-            <span className="uppercase text-5xl sm:text-6xl lg:text-7xl">
+            <span className="uppercase text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
               SERVIÇOS
             </span>
           }
@@ -28,7 +28,8 @@ export function Services() {
           }
         />
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {/* Grid responsivo - Mobile First */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
           {SERVICES.map((service, index) => {
             const featured = index === 1;
 
@@ -40,7 +41,7 @@ export function Services() {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.5, delay: index * 0.08, ease: "easeOut" }}
                 className={cn(
-                  "relative flex min-h-[220px] flex-col justify-between overflow-hidden rounded-2xl p-6 transition-transform duration-300 hover:-translate-y-1",
+                  "relative flex min-h-[180px] sm:min-h-[200px] lg:min-h-[220px] flex-col justify-between overflow-hidden rounded-2xl p-4 sm:p-5 lg:p-6 transition-transform duration-300 hover:-translate-y-1",
                   featured
                     ? "bg-paper text-ink-500"
                     : "bg-gold-gradient text-paper",
@@ -52,14 +53,14 @@ export function Services() {
 
                 <span
                   className={cn(
-                    "relative z-10 font-display text-6xl font-bold sm:text-7xl",
+                    "relative z-10 font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold",
                     featured ? "text-gold-500" : "text-paper opacity-90",
                   )}
                 >
                   {service.number}
                 </span>
 
-                <h3 className="relative z-10 font-display text-xl font-semibold uppercase leading-snug tracking-tight">
+                <h3 className="relative z-10 font-display text-base sm:text-lg lg:text-xl font-semibold uppercase leading-snug tracking-tight">
                   {service.title}
                 </h3>
               </motion.div>

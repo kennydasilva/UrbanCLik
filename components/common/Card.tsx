@@ -9,7 +9,7 @@ export function Card({ className, tone = "dark", children, ...props }: CardProps
   return (
     <div
       className={cn(
-        "rounded-2xl border p-6 transition-colors duration-300 sm:p-8",
+        "rounded-xl sm:rounded-2xl border p-4 sm:p-6 lg:p-8 transition-colors duration-300",
         tone === "dark" &&
           "border-paper/10 bg-paper/[0.03] backdrop-blur-sm hover:border-gold-400/40",
         tone === "light" && "border-ink-100 bg-paper text-ink-500 shadow-sm",

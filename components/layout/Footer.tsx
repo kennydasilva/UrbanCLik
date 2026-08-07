@@ -19,7 +19,10 @@ export function Footer({ onOpenContact }: FooterProps) {
   return (
     <footer className="rounded-t-[2.5rem] bg-paper text-ink-500 sm:rounded-t-[3.5rem]">
       <Container className="flex flex-col gap-8 py-8 sm:py-10 px-0 sm:px-6 lg:px-8">
+        {/* Grid principal - responsivo */}
         <div className="grid gap-8 lg:grid-cols-[auto_1fr_auto_auto] lg:gap-12 lg:items-center">
+          
+          {/* Coluna 1: Logo + Social + Email */}
           <div className="flex flex-col items-start gap-5 -ml-6 sm:-ml-10 lg:-ml-14">
             <Image
               src="/images/LOGO-V1.png"
@@ -27,7 +30,7 @@ export function Footer({ onOpenContact }: FooterProps) {
               width={1080}
               height={1080}
               priority
-              className="h-40 w-auto select-none sm:h-52"
+              className="h-32 w-auto select-none sm:h-40 lg:h-52"
             />
             <SocialIcons />
             <a
@@ -39,14 +42,16 @@ export function Footer({ onOpenContact }: FooterProps) {
             </a>
           </div>
 
+          {/* Coluna 2: Slogan "We Create You Grow" */}
           <div className="flex items-center justify-center py-4">
-            <p className="font-display text-5xl leading-[1.05] tracking-tight text-center sm:text-6xl lg:text-7xl">
+            <p className="font-display text-4xl leading-[1.05] tracking-tight text-center sm:text-5xl md:text-6xl lg:text-7xl">
               We Create
               <br />
               You Grow
             </p>
           </div>
 
+          {/* Coluna 3: Links de navegação */}
           <nav
             className="flex flex-col gap-2 text-base font-medium text-ink-500/80"
             aria-label="Navegação do rodapé"
@@ -62,6 +67,7 @@ export function Footer({ onOpenContact }: FooterProps) {
             ))}
           </nav>
 
+          {/* Coluna 4: Botões */}
           <div className="flex flex-col gap-3 w-full sm:w-fit -mr-6 sm:-mr-10 lg:-mr-14">
             <Button
               type="button"
