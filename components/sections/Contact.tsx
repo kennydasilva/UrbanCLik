@@ -90,7 +90,7 @@ export function Contact() {
 
               <svg
                 viewBox="0 0 200 220"
-                className="animate-float relative h-32 w-28 sm:h-44 sm:w-40 md:h-48 md:w-44 lg:h-56 lg:w-52 drop-shadow-[0_0_35px_rgba(241,206,61,0.55)]"
+                className="animate-spin-slow relative h-32 w-28 sm:h-44 sm:w-40 md:h-48 md:w-44 lg:h-56 lg:w-52 drop-shadow-[0_0_35px_rgba(241,206,61,0.55)]"
                 fill="none"
               >
                 <defs>

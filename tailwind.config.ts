@@ -111,6 +111,10 @@ const config: Config = {
           "0%, 100%": { transform: "translateY(0px)" },
           "50%": { transform: "translateY(-12px)" },
         },
+        "spin-slow": {
+          from: { transform: "rotate(0deg)" },
+          to: { transform: "rotate(360deg)" },
+        },
         "fade-in": {
           from: { opacity: "0" },
           to: { opacity: "1" },
@@ -120,6 +124,7 @@ const config: Config = {
         "accordion-down": "accordion-down 0.25s ease-out",
         "accordion-up": "accordion-up 0.25s ease-out",
         float: "float 6s ease-in-out infinite",
+        "spin-slow": "spin-slow 8s linear infinite",
         "fade-in": "fade-in 0.6s ease-out",
       },
     },
