@@ -18,12 +18,12 @@ export function Footer({ onOpenContact }: FooterProps) {
 
   return (
     <footer className="rounded-t-[2.5rem] bg-paper text-ink-500 sm:rounded-t-[3.5rem]">
-      <Container className="flex flex-col gap-8 py-8 sm:py-10 px-0 sm:px-6 lg:px-8">
+      <Container className="flex flex-col gap-8 py-8 sm:py-10 px-5 sm:px-6 lg:px-8">
         {/* Grid principal - responsivo */}
         <div className="grid gap-8 lg:grid-cols-[auto_1fr_auto_auto] lg:gap-12 lg:items-center">
-          
+
           {/* Coluna 1: Logo + Social + Email */}
-          <div className="flex flex-col items-start gap-5 -ml-6 sm:-ml-10 lg:-ml-14">
+          <div className="flex flex-col items-start gap-5 lg:-ml-14">
             <Image
               src="/images/LOGO-V1.png"
               alt="UrbanClick"
@@ -68,7 +68,7 @@ export function Footer({ onOpenContact }: FooterProps) {
           </nav>
 
           {/* Coluna 4: Botões */}
-          <div className="flex flex-col gap-3 w-full sm:w-fit -mr-6 sm:-mr-10 lg:-mr-14">
+          <div className="flex flex-col gap-3 w-full sm:w-fit lg:-mr-14">
             <Button
               type="button"
               size="sm"
