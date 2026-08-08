@@ -84,13 +84,13 @@ export function Contact() {
             <div className="absolute inset-6 sm:inset-8 md:inset-10 animate-pulse rounded-full bg-gold-400/30 blur-3xl" />
 
             {/* Glass ring with 3D depth */}
-            <div className="relative flex h-full w-full items-center justify-center rounded-full border border-gold-300/25 bg-white/[0.04] shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_30px_60px_-20px_rgba(0,0,0,0.7)] backdrop-blur-xl">
+            <div className="relative flex h-full w-full items-center justify-center rounded-full border border-gold-300/25 bg-white/[0.04] shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_30px_60px_-20px_rgba(0,0,0,0.7)] backdrop-blur-xl [perspective:1000px]">
               <div className="pointer-events-none absolute inset-3 sm:inset-4 rounded-full bg-glow-gold opacity-70 blur-md" />
               <div className="pointer-events-none absolute inset-x-0 top-4 sm:top-6 mx-auto h-12 sm:h-16 w-32 sm:w-48 rounded-[100%] bg-gold-300/25 blur-2xl" />
 
               <svg
                 viewBox="0 0 200 220"
-                className="animate-spin-slow relative h-32 w-28 sm:h-44 sm:w-40 md:h-48 md:w-44 lg:h-56 lg:w-52 drop-shadow-[0_0_35px_rgba(241,206,61,0.55)]"
+                className="animate-spin-slow relative h-32 w-28 sm:h-44 sm:w-40 md:h-48 md:w-44 lg:h-56 lg:w-52 drop-shadow-[0_0_35px_rgba(241,206,61,0.55)] [transform-style:preserve-3d]"
                 fill="none"
               >
                 <defs>

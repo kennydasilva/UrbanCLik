@@ -112,8 +112,8 @@ const config: Config = {
           "50%": { transform: "translateY(-12px)" },
         },
         "spin-slow": {
-          from: { transform: "rotate(0deg)" },
-          to: { transform: "rotate(360deg)" },
+          from: { transform: "rotateY(0deg)" },
+          to: { transform: "rotateY(360deg)" },
         },
         "fade-in": {
           from: { opacity: "0" },

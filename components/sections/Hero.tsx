@@ -91,9 +91,9 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.95, ease: "easeOut", delay: 0.15 }}
-            className="relative mx-auto mt-8 flex items-start justify-start sm:mt-10 lg:mx-0 lg:mt-0 lg:-ml-20 xl:-ml-28"
+            className="relative mx-auto mt-8 flex items-start justify-start [perspective:1000px] sm:mt-10 lg:mx-0 lg:mt-0 lg:-ml-20 xl:-ml-28"
           >
-            <div className="animate-spin-slow relative h-[180px] w-[180px] sm:h-[280px] sm:w-[280px] md:h-[360px] md:w-[360px] lg:h-[460px] lg:w-[460px]">
+            <div className="animate-spin-slow relative h-[180px] w-[180px] [transform-style:preserve-3d] sm:h-[280px] sm:w-[280px] md:h-[360px] md:w-[360px] lg:h-[460px] lg:w-[460px]">
               <Image
                 src="/images/IMG_7477.PNG"
                 alt="Cursor dourado 3D — símbolo UrbanClick"
