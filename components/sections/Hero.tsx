@@ -48,7 +48,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="flex flex-col justify-start gap-6"
+            className="relative z-20 flex flex-col justify-start gap-6"
           >
             {/* Título principal - responsivo */}
             <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-bold uppercase leading-[0.95] tracking-tight text-paper">
@@ -91,23 +91,28 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.95, ease: "easeOut", delay: 0.15 }}
-            className="relative mx-auto mt-8 flex items-start justify-start [perspective:1000px] sm:mt-10 lg:mx-0 lg:mt-0 lg:-ml-20 xl:-ml-28"
+            className="relative z-0 mx-auto mt-8 flex items-start justify-start [perspective:1000px] sm:mt-10 lg:mx-0 lg:mt-0 lg:-ml-20 xl:-ml-28"
           >
-            <div className="relative h-[180px] w-[180px] [transform-style:preserve-3d] sm:h-[280px] sm:w-[280px] md:h-[360px] md:w-[360px] lg:h-[460px] lg:w-[460px]">
+            <div className="relative h-[180px] w-[180px] sm:h-[280px] sm:w-[280px] md:h-[360px] md:w-[360px] lg:h-[460px] lg:w-[460px]">
               {/* Anel orbital */}
               <div
                 className="animate-golden-orbit pointer-events-none absolute -inset-[15%] rounded-full border-2 border-gold-400/40 shadow-[0_0_24px_rgba(231,184,36,0.3),inset_0_0_16px_rgba(231,184,36,0.15)]"
                 aria-hidden="true"
               />
 
-              <div className="animate-golden-float relative h-full w-full [transform-style:preserve-3d]">
+              <div className="animate-golden-float relative h-full w-full">
+                {/* Brilho - opacity/scale isolados do transform da imagem para animar sem jank */}
+                <div
+                  className="animate-golden-glow pointer-events-none absolute inset-[20%] rounded-full bg-gold-400/60 blur-2xl"
+                  aria-hidden="true"
+                />
                 <Image
                   src="/images/IMG_7477.PNG"
                   alt="Cursor dourado 3D — símbolo UrbanClick"
                   fill
                   priority
                   sizes="(max-width: 640px) 180px, (max-width: 1024px) 280px, 460px"
-                  className="object-contain"
+                  className="relative object-contain"
                 />
               </div>
             </div>

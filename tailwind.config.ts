@@ -116,20 +116,12 @@ const config: Config = {
           "50%": { transform: "rotateY(55deg)" },
         },
         "golden-float": {
-          "0%, 100%": {
-            transform: "translateY(0) rotateY(-55deg)",
-            filter: "drop-shadow(0 0 0 rgba(231, 184, 36, 0))",
-          },
-          "25%, 75%": {
-            transform: "translateY(-18px) rotateY(-18deg) scale(1.03)",
-            filter:
-              "drop-shadow(0 0 32px rgba(231, 184, 36, 0.65)) drop-shadow(0 0 64px rgba(231, 184, 36, 0.35))",
-          },
-          "50%": {
-            transform: "translateY(-9px) rotateY(55deg)",
-            filter:
-              "drop-shadow(0 0 20px rgba(231, 184, 36, 0.5)) drop-shadow(0 0 44px rgba(231, 184, 36, 0.25))",
-          },
+          "0%, 100%": { transform: "translateY(0) scale(1)" },
+          "50%": { transform: "translateY(-22px) scale(1.03)" },
+        },
+        "golden-glow": {
+          "0%, 100%": { opacity: "0.35", transform: "scale(0.9)" },
+          "50%": { opacity: "0.85", transform: "scale(1.1)" },
         },
         "golden-orbit": {
           from: { transform: "rotateX(70deg) rotateZ(0deg)" },
@@ -146,6 +138,7 @@ const config: Config = {
         float: "float 6s ease-in-out infinite",
         "spin-slow": "spin-slow 6s ease-in-out infinite",
         "golden-float": "golden-float 6s ease-in-out infinite",
+        "golden-glow": "golden-glow 6s ease-in-out infinite",
         "golden-orbit": "golden-orbit 7s linear infinite",
         "fade-in": "fade-in 0.6s ease-out",
       },
