@@ -77,7 +77,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt" className={`${displayFont.variable} ${bodyFont.variable}`}>
+    <html
+      lang="pt"
+      className={`${displayFont.variable} ${bodyFont.variable}`}
+      suppressHydrationWarning
+    >
       <body>{children}</body>
     </html>
   );
