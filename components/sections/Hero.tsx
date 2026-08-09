@@ -93,15 +93,23 @@ export function Hero() {
             transition={{ duration: 0.95, ease: "easeOut", delay: 0.15 }}
             className="relative mx-auto mt-8 flex items-start justify-start [perspective:1000px] sm:mt-10 lg:mx-0 lg:mt-0 lg:-ml-20 xl:-ml-28"
           >
-            <div className="animate-spin-slow relative h-[180px] w-[180px] [transform-style:preserve-3d] sm:h-[280px] sm:w-[280px] md:h-[360px] md:w-[360px] lg:h-[460px] lg:w-[460px]">
-              <Image
-                src="/images/IMG_7477.PNG"
-                alt="Cursor dourado 3D — símbolo UrbanClick"
-                fill
-                priority
-                sizes="(max-width: 640px) 180px, (max-width: 1024px) 280px, 460px"
-                className="object-contain"
+            <div className="relative h-[180px] w-[180px] [transform-style:preserve-3d] sm:h-[280px] sm:w-[280px] md:h-[360px] md:w-[360px] lg:h-[460px] lg:w-[460px]">
+              {/* Anel orbital */}
+              <div
+                className="animate-golden-orbit pointer-events-none absolute -inset-[15%] rounded-full border-2 border-gold-400/40 shadow-[0_0_24px_rgba(231,184,36,0.3),inset_0_0_16px_rgba(231,184,36,0.15)]"
+                aria-hidden="true"
               />
+
+              <div className="animate-golden-float relative h-full w-full [transform-style:preserve-3d]">
+                <Image
+                  src="/images/IMG_7477.PNG"
+                  alt="Cursor dourado 3D — símbolo UrbanClick"
+                  fill
+                  priority
+                  sizes="(max-width: 640px) 180px, (max-width: 1024px) 280px, 460px"
+                  className="object-contain"
+                />
+              </div>
             </div>
           </motion.div>
         </div>
