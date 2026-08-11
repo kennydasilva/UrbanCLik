@@ -14,7 +14,7 @@ const AccordionItem = forwardRef<
   <AccordionPrimitive.Item
     ref={ref}
     className={cn(
-      "overflow-hidden rounded-2xl border border-[#a68302]/60 bg-[linear-gradient(135deg,#967d00_0%,#2f2701_50%,#a68302_100%)] transition-colors duration-300 data-[state=open]:border-[#ebd476]",
+      "overflow-hidden rounded-xl sm:rounded-2xl border border-[#a68302]/60 bg-[linear-gradient(135deg,#967d00_0%,#2f2701_50%,#a68302_100%)] transition-colors duration-300 data-[state=open]:border-[#ebd476]",
       className,
     )}
     {...props}
@@ -30,17 +30,17 @@ const AccordionTrigger = forwardRef<
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
-        "group flex flex-1 items-center justify-between gap-4 px-5 py-5 text-left text-sm font-medium text-paper sm:text-base",
+        "group flex flex-1 items-center justify-between gap-3 sm:gap-4 px-4 py-4 sm:px-5 sm:py-5 text-xs sm:text-sm md:text-base font-medium text-paper",
         className,
       )}
       {...props}
     >
       {children}
       <span
-        className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#fcd101] text-white transition-transform duration-300 group-data-[state=open]:rotate-45"
+        className="flex h-7 w-7 sm:h-8 sm:w-8 shrink-0 items-center justify-center rounded-full bg-[#fcd101] text-white transition-transform duration-300 group-data-[state=open]:rotate-45"
         aria-hidden="true"
       >
-        <Plus className="h-4 w-4" strokeWidth={2.5} />
+        <Plus className="h-3.5 w-3.5 sm:h-4 sm:w-4" strokeWidth={2.5} />
       </span>
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
@@ -53,10 +53,10 @@ const AccordionContent = forwardRef<
 >(({ className, children, ...props }, ref) => (
   <AccordionPrimitive.Content
     ref={ref}
-    className="overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+    className="overflow-hidden text-xs sm:text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
     {...props}
   >
-    <div className={cn("px-5 pb-5 text-paper/80 leading-relaxed", className)}>
+    <div className={cn("px-4 pb-4 sm:px-5 sm:pb-5 text-paper/80 leading-relaxed", className)}>
       {children}
     </div>
   </AccordionPrimitive.Content>

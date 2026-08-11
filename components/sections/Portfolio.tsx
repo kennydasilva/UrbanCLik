@@ -11,25 +11,21 @@ const PROJECTS = [
     id: "website",
     src: "/images/WEB-HIGHLIGHTER-MOCKUP.jpg",
     alt: "Website Institucional",
-    showButton: false,
   },
   {
     id: "mozambique",
     src: "/images/BANNER-MOCKUP.png",
     alt: "Projeto Moçambique · 2026",
-    showButton: false,
   },
   {
     id: "bestfy",
     src: "/images/HALL-3.jpg",
     alt: "Bestfy Investimentos, Lda.",
-    showButton: true,
   },
   {
     id: "ht-seguranca",
     src: "/images/CORTA-VENTO.jpg",
     alt: "HT Segurança",
-    showButton: false,
   },
 ];
 
@@ -37,7 +33,7 @@ export function Portfolio() {
   return (
     <section className="relative bg-ink-500 py-16 sm:py-20 lg:py-28">
       <Container className="flex flex-col gap-8 sm:gap-10 lg:gap-12">
-        {/* Título - responsivo */}
+        {/* Título */}
         <motion.h2
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -48,7 +44,7 @@ export function Portfolio() {
           <span className="text-gold-400">Projetos</span> que falam por si só
         </motion.h2>
 
-        {/* Grid de projetos - responsivo */}
+        {/* Grid de projetos - 2 colunas */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
           {PROJECTS.map((project, index) => (
             <motion.div
@@ -66,24 +62,24 @@ export function Portfolio() {
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 50vw"
               />
-              {project.showButton && (
-                <div className="absolute inset-x-0 bottom-4 flex justify-center sm:bottom-6 lg:bottom-8">
-                  <Button asChild variant="gold" size="sm">
-                    <a
-                      href="/PORTIFOLIO-ATUALIZADO.pdf"
-                      download
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-xs sm:text-sm"
-                    >
-                      <Download className="h-3 w-3 sm:h-4 sm:w-4" strokeWidth={2} />
-                      Baixar portfólio
-                    </a>
-                  </Button>
-                </div>
-              )}
             </motion.div>
           ))}
+        </div>
+
+        {/* 🔥 BOTÃO CENTRALIZADO NO FINAL DA SEÇÃO */}
+        <div className="flex justify-center mt-4 sm:mt-6 lg:mt-8">
+          <Button asChild variant="gold" size="lg">
+            <a
+              href="/PORTIFOLIO-ATUALIZADO.pdf"
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4"
+            >
+              <Download className="h-4 w-4 sm:h-5 sm:w-5" strokeWidth={2} />
+              Baixar portfólio
+            </a>
+          </Button>
         </div>
       </Container>
     </section>
