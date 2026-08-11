@@ -8,7 +8,6 @@ type Props = {
   energyRef: { current: number };
 };
 
-const COUNT = 2600;
 const Z_START = -16;
 const Z_EDGE = 1.8;
 const SPREAD_X = 9;
@@ -24,18 +23,26 @@ export default function GoldParticleFlow({ energyRef }: Props) {
       "(prefers-reduced-motion: reduce)",
     ).matches;
 
+    // Telemóveis têm GPUs mais fracas e ecrãs com maior densidade de pixels;
+    // o blending aditivo (o brilho a somar-se entre partículas sobrepostas)
+    // é caro em fill-rate, por isso reduzimos contagem e resolução aqui.
+    const isMobile = window.innerWidth < 768;
+    const isTablet = window.innerWidth < 1024;
+    const COUNT = isMobile ? 700 : isTablet ? 1500 : 2600;
+    const maxPixelRatio = isMobile ? 1.5 : 2;
+
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(52, 1, 0.1, 100);
     camera.position.set(0, 2.3, 8.2);
     camera.lookAt(0, -1.3, 0);
 
     const renderer = new THREE.WebGLRenderer({
-      antialias: true,
+      antialias: !isMobile,
       alpha: true,
       powerPreference: "high-performance",
     });
     renderer.setClearColor(0x000000, 0);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, maxPixelRatio));
     mount.appendChild(renderer.domElement);
     renderer.domElement.style.width = "100%";
     renderer.domElement.style.height = "100%";
