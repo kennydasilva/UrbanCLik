@@ -199,6 +199,81 @@
   .transition-mobile {
     @apply transition duration-300 ease-in-out;
   }
+
+  /* ---------- Texto dourado com brilho animado (IntroScene) ---------- */
+  .text-gold-shine {
+    background-image: linear-gradient(
+      100deg,
+      #9c6e17 0%,
+      #f1ce3d 30%,
+      #fdf6ce 50%,
+      #f1ce3d 70%,
+      #9c6e17 100%
+    );
+    background-size: 250% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gold-shine 6s linear infinite;
+  }
+
+  @keyframes gold-shine {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 250% 50%;
+    }
+  }
+
+  /* ---------- Brilho do logo ao clicar (IntroScene) ---------- */
+  .logo-glow-off {
+    filter: drop-shadow(0 0 0 transparent);
+    transition: filter 700ms ease-out;
+  }
+
+  .logo-glow-on {
+    filter:
+      drop-shadow(0 0 18px rgba(231, 184, 36, 0.65)) drop-shadow(0 0 55px rgba(231, 184, 36, 0.4));
+    transition: filter 180ms ease-out;
+  }
+
+  /* ---------- Cursor dourado (IntroScene) ---------- */
+  .gold-cursor {
+    pointer-events: none;
+    filter: drop-shadow(0 4px 10px rgba(156, 110, 23, 0.7));
+    transition: transform 1.35s cubic-bezier(0.34, 0.9, 0.24, 1);
+  }
+
+  .gold-cursor-press {
+    transition: transform 140ms ease-out;
+  }
+
+  .gold-cursor-ring {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 12px;
+    height: 12px;
+    border-radius: 9999px;
+    border: 2px solid #fdf6ce;
+    opacity: 0;
+  }
+
+  .gold-cursor-ring-on {
+    animation: click-ring 700ms ease-out forwards;
+  }
+
+  @keyframes click-ring {
+    0% {
+      opacity: 0.9;
+      transform: translate(-50%, -50%) scale(0.4);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(5);
+    }
+  }
 }
 
 /* Ajustes específicos para telas muito pequenas */

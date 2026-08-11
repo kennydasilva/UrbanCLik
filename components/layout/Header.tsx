@@ -1,12 +1,11 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { Menu } from "lucide-react";
 import { Container } from "@/components/common/Container";
 import { Navbar } from "./Navbar";
 import { MobileMenu } from "./MobileMenu";
 import { Logo } from "./Logo";
-import { cn } from "@/lib/utils";
 
 interface HeaderProps {
   onOpenContact?: () => void;
@@ -14,45 +13,10 @@ interface HeaderProps {
 
 export function Header({ onOpenContact }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isHidden, setIsHidden] = useState(false);
-  const lastScrollY = useRef(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
-      setIsScrolled(currentScrollY > 50);
-
-      if (currentScrollY < 80) {
-        // Sempre visível perto do topo
-        setIsHidden(false);
-      } else if (currentScrollY > lastScrollY.current) {
-        // A descer → esconde
-        setIsHidden(true);
-      } else {
-        // A subir → mostra
-        setIsHidden(false);
-      }
-
-      lastScrollY.current = currentScrollY;
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <>
-      <header
-        className={cn(
-          "fixed inset-x-0 top-0 z-40 transition-all duration-300",
-          isScrolled
-            ? "bg-ink-500/90 backdrop-blur-md shadow-lg"
-            : "bg-transparent",
-          isHidden ? "-translate-y-full" : "translate-y-0",
-        )}
-      >
+      <header className="fixed inset-x-0 top-0 z-40 bg-ink-500/60 backdrop-blur-md">
         <Container className="grid grid-cols-3 items-center gap-4 py-2 sm:py-3">
           {/* Logo - alinhado à esquerda */}
           <a
@@ -81,9 +45,6 @@ export function Header({ onOpenContact }: HeaderProps) {
         </Container>
       </header>
 
-      {/* Fora do <header> de propósito: o header tem transform (translate-y)
-          para o efeito de esconder ao scroll, o que criaria um novo
-          containing block e quebraria o "fixed inset-0" deste menu. */}
       <MobileMenu
         open={menuOpen}
         onClose={() => setMenuOpen(false)}

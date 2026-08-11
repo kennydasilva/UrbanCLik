@@ -94,12 +94,6 @@ export function Hero() {
             className="relative z-0 mx-auto mt-8 flex items-start justify-start [perspective:1000px] sm:mt-10 lg:mx-0 lg:mt-8 lg:-ml-20 xl:mt-10 xl:-ml-28"
           >
             <div className="relative h-[180px] w-[180px] sm:h-[280px] sm:w-[280px] md:h-[360px] md:w-[360px] lg:h-[460px] lg:w-[460px]">
-              {/* Anel orbital */}
-              <div
-                className="animate-golden-orbit pointer-events-none absolute -inset-[15%] rounded-full border-2 border-gold-400/40 shadow-[0_0_24px_rgba(231,184,36,0.3),inset_0_0_16px_rgba(231,184,36,0.15)]"
-                aria-hidden="true"
-              />
-
               <div className="animate-golden-float relative h-full w-full">
                 {/* Brilho - opacity/scale isolados do transform da imagem para animar sem jank */}
                 <div

@@ -19,7 +19,7 @@ export function Navbar({ className, onOpenContact }: NavbarProps) {
   return (
     <nav
       className={cn(
-        "hidden items-center gap-0.5 sm:gap-1 rounded-full border border-gold-400/60 bg-ink-500/50 px-2 sm:px-3 py-2 sm:py-2.5 backdrop-blur-md lg:flex",
+        "hidden items-center gap-0.5 sm:gap-1 px-2 sm:px-3 py-2 sm:py-2.5 lg:flex",
         className,
       )}
       aria-label="Navegação principal"

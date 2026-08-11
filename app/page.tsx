@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { IntroScene } from "@/components/sections/IntroScene";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
 import { Services } from "@/components/sections/Services";
@@ -19,6 +20,7 @@ export default function HomePage() {
     <>
       <Header onOpenContact={() => setContactOpen(true)} />
       <main>
+        <IntroScene />
         <Hero />
         <About />
         <Services />
